@@ -3,6 +3,7 @@ using DioSeriesApiRest.Services;
 using DioSeriesApiRest.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 
 namespace DioSeriesApiRest.Controllers
@@ -19,52 +20,56 @@ namespace DioSeriesApiRest.Controllers
         }
         // GET: SerieController
         [HttpGet]
-        public async Task<ActionResult<SerieViewModel>> Index()
+        public async Task<ActionResult<List<SerieViewModel>>> Index()
         {
-            return Ok();
+            var listaSeries = await _ISerieService.Listar();
+            return Ok(listaSeries);
         }
 
         // GET: SerieController/Details/5
         [HttpGet("/{id}")]
-        public async Task Details([FromRoute] int id)
+        public async Task<ActionResult<SerieViewModel>> DetailsById([FromRoute] int id)
         {
-            return Ok();
+            var serieById = await _ISerieService.ObterById(id);
+            return Ok(serieById);
         }
 
         // POST: SerieController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task Create([FromBody] SerieInputModel Serie)
+        public async Task Create([FromBody] SerieInputModel serie)
         {
             try
             {
-                return Ok();
+                await _ISerieService.Inserir(serie);
+                Ok();
             }
             catch
             {
-                return Ok();
+                NoContent();
             }
         }
 
         // POST: SerieController/Edit/5
-        [HttpPost("/{id}")]
+        [HttpPut("/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task<SerieViewModel> Edit([FromRoute] int id, [FromBody] SerieInputModel serie)
+        public async Task<ActionResult> Edit([FromRoute] int id, [FromBody] SerieInputModel serie)
         {
             try
             {
+                await _ISerieService.Editar(id, serie);
                 return Ok();
             }
             catch
             {
-                return Ok();
+                return NotFound();
             }
         }
 
         // POST: SerieController/Delete/5
-        [HttpPost("/{id}")]
+        [HttpDelete("/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task Delete([FromRoute] int id)
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
             try
             {
