@@ -1,14 +1,14 @@
 using DioSeriesApiRest.Enum;
 
-namespace DioSeriesApiRest.InputSerieModel
+namespace DioSeriesApiRest.ViewModel
 {
-    public class InputSerieModel
+    public class SerieViewModel
     {
+        public int Id {get;set;}
         private Genero Genero { get; set; }
         private string Titulo { get; set; }
         private string Descricao { get; set; }
         private int Ano { get; set; }
-
         private bool Excluido { get; set; }
     }
 }

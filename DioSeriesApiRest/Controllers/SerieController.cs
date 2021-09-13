@@ -1,16 +1,14 @@
-﻿using DioSeriesApiRest.Entities;
+﻿using DioSeriesApiRest.InputModel;
 using DioSeriesApiRest.Services;
-using Microsoft.AspNetCore.Http;
+using DioSeriesApiRest.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace DioSeriesApiRest.Controllers
 {
     [ApiController]
-    [Route("v1")]
+    [Route("[controller]")]
     public class SerieController : ControllerBase
     {
         private readonly ISeriesService _ISerieService;
@@ -21,14 +19,14 @@ namespace DioSeriesApiRest.Controllers
         }
         // GET: SerieController
         [HttpGet]
-        public ActionResult Index()
+        public async Task<ActionResult<SerieViewModel>> Index()
         {
             return Ok();
         }
 
         // GET: SerieController/Details/5
-        [HttpGet("{id}")]
-        public ActionResult Details([FromRoute] int id)
+        [HttpGet("/{id}")]
+        public async Task Details([FromRoute] int id)
         {
             return Ok();
         }
@@ -36,7 +34,7 @@ namespace DioSeriesApiRest.Controllers
         // POST: SerieController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromBody] SeriesModel Serie)
+        public async Task Create([FromBody] SerieInputModel Serie)
         {
             try
             {
@@ -49,9 +47,9 @@ namespace DioSeriesApiRest.Controllers
         }
 
         // POST: SerieController/Edit/5
-        [HttpPost]
+        [HttpPost("/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, SeriesModel serie)
+        public async Task<SerieViewModel> Edit([FromRoute] int id, [FromBody] SerieInputModel serie)
         {
             try
             {
@@ -64,9 +62,9 @@ namespace DioSeriesApiRest.Controllers
         }
 
         // POST: SerieController/Delete/5
-        [HttpPost]
+        [HttpPost("/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public async Task Delete([FromRoute] int id)
         {
             try
             {
