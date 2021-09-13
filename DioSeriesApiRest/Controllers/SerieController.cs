@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace DioSeriesApiRest.Controllers
 {
-    public class SerieController : Controller
+    [ApiController]
+    [Route("v1")]
+    public class SerieController : ControllerBase
     {
         private readonly ISeriesService _ISerieService;
 
@@ -18,34 +20,31 @@ namespace DioSeriesApiRest.Controllers
             _ISerieService = IserviceSerie;
         }
         // GET: SerieController
+        [HttpGet]
         public ActionResult Index()
         {
-            var Serie = _ISerieService.Listar();
-
-            return View(Serie);
+            return Ok();
         }
 
         // GET: SerieController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("{id}")]
+        public ActionResult Details([FromRoute] int id)
         {
-            var SerieById = _ISerieService.ObterById(id);
-            return View(SerieById);
+            return Ok();
         }
 
         // POST: SerieController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SeriesModel Serie)
+        public ActionResult Create([FromBody] SeriesModel Serie)
         {
             try
             {
-                var SerieCriada = _ISerieService.Inserir(Serie);
-
-                return Ok(SerieCriada);
+                return Ok();
             }
             catch
             {
-                return View();
+                return Ok();
             }
         }
 
@@ -56,13 +55,11 @@ namespace DioSeriesApiRest.Controllers
         {
             try
             {
-                _ISerieService.Editar(id, serie);
-
                 return Ok();
             }
             catch
             {
-                return View();
+                return Ok();
             }
         }
 
@@ -73,13 +70,11 @@ namespace DioSeriesApiRest.Controllers
         {
             try
             {
-                _ISerieService.Excluir(id);
-
                 return Ok();
             }
             catch
             {
-                return View();
+                return Ok();
             }
         }
     }

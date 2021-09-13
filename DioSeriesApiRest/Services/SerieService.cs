@@ -1,4 +1,5 @@
 ﻿using DioSeriesApiRest.Entities;
+using DioSeriesApiRest.Repositorie;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +9,35 @@ namespace DioSeriesApiRest.Services
 {
     public class SerieService : ISeriesService
     {
-        public void Editar(int id, SeriesModel serie)
+        private readonly ISerieRepositorio _ISerierepositorio;
+
+        public SerieService(ISerieRepositorio iSerierepositorio)
+        {
+            _ISerierepositorio = iSerierepositorio;
+        }
+
+        public Task Editar(int id, SeriesModel serie)
         {
             throw new NotImplementedException();
         }
 
-        public void Excluir(int id)
+        public Task Excluir(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SeriesModel Inserir(SeriesModel serie)
+        public Task Inserir(SeriesModel serie)
+        {
+            throw new NotImplementedException();
+
+        }
+
+        public Task<List<SeriesModel>> Listar()
         {
             throw new NotImplementedException();
         }
 
-        public List<SeriesModel> Listar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public SeriesModel ObterById(int id)
+        public Task<SeriesModel> ObterById(int id)
         {
             throw new NotImplementedException();
         }

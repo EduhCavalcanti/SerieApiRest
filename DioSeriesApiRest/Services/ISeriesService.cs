@@ -9,15 +9,15 @@ namespace DioSeriesApiRest.Services
     public interface ISeriesService
     {
         //Lista as Series 
-        List<SeriesModel> Listar();
+        Task<List<SeriesModel>> Listar();
         //Criar Serie
-        SeriesModel Inserir(SeriesModel serie);
+        Task Inserir(SeriesModel serie);
         //Obter Serie por Id
-        SeriesModel ObterById(int id);
+        Task<SeriesModel> ObterById(int id);
         //Editar Serie
-        void Editar(int id, SeriesModel serie);
+        Task Editar(int id, SeriesModel serie);
         //Excuir Serie
-        void Excluir(int id);
+        Task Excluir(int id);
 
     }
 }

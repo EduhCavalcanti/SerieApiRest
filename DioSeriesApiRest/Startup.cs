@@ -31,7 +31,7 @@ namespace DioSeriesApiRest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ISeriesService, SerieService>();
-            //services.AddScoped<ISerieRepositorio, SerieRepositorio>();
+            services.AddScoped<ISerieRepositorio, SerieRepositorio>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
