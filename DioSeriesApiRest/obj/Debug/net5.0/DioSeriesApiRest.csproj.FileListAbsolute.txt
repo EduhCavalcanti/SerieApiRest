@@ -76,6 +76,7 @@ C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSer
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.dll
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\ref\DioSeriesApiRest.dll
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.pdb
+<<<<<<< HEAD
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\bin\Debug\net5.0\appsettings.json
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\bin\Debug\net5.0\DioSeriesApiRest.exe
@@ -134,3 +135,7 @@ C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\scoped
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.RazorTargetAssemblyInfo.cache
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.csproj.CopyComplete
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.genruntimeconfig.cache
+=======
+C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Humanizer.dll
+C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+>>>>>>> f9cd8c3279f7b8fafe282c807cea565773ad9181

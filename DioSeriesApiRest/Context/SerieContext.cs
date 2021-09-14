@@ -21,7 +21,7 @@ namespace DioSeriesApiRest.Context
         //String de configuração com o banco de dados sqlServer
         private string GetStringConnection()
         {
-            string strCon = "Password=123456789;Persist Security Info=True;User ID=home; Initial Catalog=ECommerce;Data Source=DESKTOP-J0D6E6R\\SQLEXPRESS";
+            string strCon = "Password=123456789;Persist Security Info=True;User ID=home; Initial Catalog=CatalogoSerie;Data Source=DESKTOP-J0D6E6R\\SQLEXPRESS";
             return strCon;
         }
 
