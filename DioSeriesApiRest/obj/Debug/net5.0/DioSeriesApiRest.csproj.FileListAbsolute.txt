@@ -76,3 +76,5 @@ C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSer
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.dll
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\ref\DioSeriesApiRest.dll
 C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSeriesApiRest.pdb
+C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Humanizer.dll
+C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
