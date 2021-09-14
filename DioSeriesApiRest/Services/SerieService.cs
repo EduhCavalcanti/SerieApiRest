@@ -1,7 +1,7 @@
 ﻿using DioSeriesApiRest.Entities;
-using DioSeriesApiRest.InputModel;
 using DioSeriesApiRest.Repositorie;
 using DioSeriesApiRest.ViewModel;
+using DioSeriesApiRest.InputModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,29 +13,81 @@ namespace DioSeriesApiRest.Services
     {
         private readonly ISerieRepositorio _ISerierepositorio;
 
-        public Task Editar(int id, SerieInputModel serie)
+        public async Task Editar(int id, SerieInputModel serie)
         {
-            throw new NotImplementedException();
+            var serieId = await _ISerierepositorio.ObterById(id);
+            //Verifica se existe serie
+            if(serieId == null){
+                throw new Exception();
+            }
+
+            var insertSerie = new SeriesModel{
+                Id= serieId.Id,
+                Titulo=serieId.Titulo,
+                Descricao=serieId.Descricao,
+                Ano=serieId.Ano,
+                Excluido=false
+            };
+            await _ISerierepositorio.Editar(insertSerie);
         }
 
-        public Task Excluir(int id)
+        public async Task Excluir(int id)
         {
-            throw new NotImplementedException();
+            //Vai primeiro obter o id passado no parâmetro
+            var serieId = await _ISerierepositorio.ObterById(id);
+            //Vai verificar se a serie existe
+            if(serieId == null){
+                throw new Exception();
+            }
+
+            await _ISerierepositorio.Excluir(serieId.Id);//Depois testar com id 
         }
 
-        public Task Inserir(SerieInputModel serie)
+        public async Task Inserir(SerieInputModel serie)
         {
-            throw new NotImplementedException();
+            var insertSerie = new SeriesModel{
+                Titulo=serie.Titulo,
+                Descricao=serie.Descricao,
+                Ano=serie.Ano,
+                Excluido=false,
+                
+            };
+
+            await _ISerierepositorio.Inserir(insertSerie);
         }
 
-        public Task<List<SerieViewModel>> Listar()
+        public async Task<List<SerieViewModel>> Listar()
         {
-            throw new NotImplementedException();
+            var serieLista = await _ISerierepositorio.Listar();
+
+            if(serieLista == null){
+                throw new Exception();
+            }
+            
+            //Vai listar todas as series 
+            return serieLista.Select(series => new SerieViewModel{
+                Titulo = series.Titulo,
+                Descricao = series.Descricao,
+                Ano = series.Ano,
+                Excluido = series.Excluido
+            }).ToList();
+
         }
 
-        public Task<SerieViewModel> ObterById(int id)
+        public async Task<SerieViewModel> ObterById(int id)
         {
-            throw new NotImplementedException();
+            var serieId = await _ISerierepositorio.ObterById(id);
+
+            if(serieId == null){
+                throw new Exception();
+            }
+
+            return new SerieViewModel{
+                Titulo = serieId.Titulo,
+                Descricao = serieId.Descricao,
+                Ano = serieId.Ano,
+                Excluido = serieId.Excluido
+            };
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DioSeriesApiRest.Repositorie
     {
         private readonly SerieContext _Context;
 
-        public Task Editar(int id, SeriesModel serie)
+        public Task Editar(SeriesModel serie)
         {
             throw new NotImplementedException();
         }

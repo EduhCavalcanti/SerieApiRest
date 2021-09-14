@@ -15,7 +15,7 @@ namespace DioSeriesApiRest.Repositorie
         //Obter Serie por Id
         Task<SeriesModel> ObterById(int id);
         //Editar Serie
-        Task Editar(int id, SeriesModel serie);
+        Task Editar(SeriesModel serie);
         //Excuir Serie
         Task Excluir(int id);
 

@@ -73,6 +73,7 @@ namespace DioSeriesApiRest.Controllers
         {
             try
             {
+                await _ISerieService.Excluir(id);
                 return Ok();
             }
             catch

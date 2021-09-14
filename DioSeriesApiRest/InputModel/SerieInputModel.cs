@@ -5,10 +5,10 @@ namespace DioSeriesApiRest.InputModel
     public class SerieInputModel
     {
         
-        private Genero Genero { get; set; }
-        private string Titulo { get; set; }
-        private string Descricao { get; set; }
-        private int Ano { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public int Ano { get; set; }
+        public Genero Genero { get; set; }
         
     }
 }

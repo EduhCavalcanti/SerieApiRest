@@ -9,10 +9,17 @@ namespace DioSeriesApiRest.Entities
     public class SeriesModel
     {
         public int Id {get;set;}
-        private Genero Genero { get; set; }
-        private string Titulo { get; set; }
-        private string Descricao { get; set; }
-        private int Ano { get; set; }
-        private bool Excluido { get; set; }
+        public Genero Genero { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public int Ano { get; set; }
+        public bool Excluido { get; set; }
+
+        
+        //Retornar Excluido
+        public bool RetornarExcluido(){
+            return Excluido;
+        }
     }
+
 }
