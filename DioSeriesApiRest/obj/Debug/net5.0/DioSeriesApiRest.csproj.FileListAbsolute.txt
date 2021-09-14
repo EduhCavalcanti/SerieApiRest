@@ -139,3 +139,5 @@ C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\obj\Debug\net5.0\DioSer
 C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Humanizer.dll
 C:\Users\eduhc\Documents\DioSeriesApiRest\DioSeriesApiRest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 >>>>>>> f9cd8c3279f7b8fafe282c807cea565773ad9181
+C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

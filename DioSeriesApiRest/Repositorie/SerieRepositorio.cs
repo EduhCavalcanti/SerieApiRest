@@ -1,5 +1,6 @@
 ﻿using DioSeriesApiRest.Context;
 using DioSeriesApiRest.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace DioSeriesApiRest.Repositorie
     {
         private readonly SerieContext _Context;
 
-        public Task Editar(SeriesModel serie)
+        public async Task Editar(SeriesModel serie)
         {
-            throw new NotImplementedException();
+            throw new Exception();
         }
 
         public Task Excluir(int id)
@@ -21,10 +22,11 @@ namespace DioSeriesApiRest.Repositorie
             throw new NotImplementedException();
         }
 
-        public Task Inserir(SeriesModel serie)
+        public async Task Inserir(SeriesModel serie)
         {
             try {
-                throw new NotImplementedException();
+                await _Context.AddAsync(serie);
+                await _Context.SaveChangesAsync();
             }
             catch (Exception e)
             {
@@ -32,14 +34,14 @@ namespace DioSeriesApiRest.Repositorie
             }
         }
 
-        public Task<List<SeriesModel>> Listar()
+        public async Task<List<SeriesModel>> Listar()
         {
-            throw new NotImplementedException();
+            return await _Context.Serie.ToListAsync();
 
         }
-        public Task<SeriesModel> ObterById(int id)
+        public async Task<SeriesModel> ObterById(int id)
         {
-            throw new NotImplementedException();
+            throw new Exception();
         }
     }
 }

@@ -6,8 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
-<<<<<<< HEAD
 build_property.RootNamespace = DioSeriesApiRest
-build_property.ProjectDir = C:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\
-=======
->>>>>>> f9cd8c3279f7b8fafe282c807cea565773ad9181
+build_property.ProjectDir = c:\Users\Eduardo\Documents\SerieApiRest\DioSeriesApiRest\
